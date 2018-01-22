@@ -95,13 +95,19 @@ function story_random(min, max) {
 //Captcha
 
 
+const Discord = require('discord.js');
 const client = new Discord.Client();
+var prefix = ".";
 
 
 client.on("ready", () => {
 
 var TailleMembres = client.users.size;
 var TailleServeurs = client.guilds.size;
+
+client.user.setGame("CAPTCHA BOT EN LIGNE");
+
+console.log("--------------------------------------");
 
 console.log(`Je suis sur ${TailleServeurs} serveur(s) avec ${TailleMembres} utilisateurs`);
 
@@ -184,7 +190,7 @@ msg.guild.member(msg.author).kick();
 
 client.on('guildMemberAdd', member => {  
 
-const salon = member.guild.channels.find('name', 'passage');
+const salon = member.guild.channels.find('name', 'bienvenue');
 
     if(!salon) return;
 
@@ -199,4 +205,7 @@ var captcha = String(Math.random()).charAt(4) + String(Math.random()).charAt(4) 
     salon.send("**Bienvenue @"+ member.user.username + "**"); 
 
 });
+
+
+client.login(process.env.TOKEN);
 
