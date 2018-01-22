@@ -94,8 +94,6 @@ function story_random(min, max) {
 
 //Captcha
 
-
-const Discord = require('discord.js');
 const client = new Discord.Client();
 var prefix = ".";
 
