@@ -103,10 +103,6 @@ client.on("ready", () => {
 var TailleMembres = client.users.size;
 var TailleServeurs = client.guilds.size;
 
-client.user.setGame("CAPTCHA BOT EN LIGNE");
-
-console.log("--------------------------------------");
-
 console.log(`Je suis sur ${TailleServeurs} serveur(s) avec ${TailleMembres} utilisateurs`);
 
 });
@@ -158,11 +154,11 @@ var recode = Attente[i].substr(code);
 
             Attente.pop();     
 
-let NouveauMembre = msg.guild.roles.find("name", "Nouveau 🎓");
+let NouveauMembre = msg.guild.roles.find("name", "Nouveau");
 
-if(!msg.guild.roles.exists("name", "Nouveau 🎓")) {
+if(!msg.guild.roles.exists("name", "Nouveau")) {
 
-        return  msg.channel.send("**:x: Le role `Nouveau 🎓` n'existe pas, veuillez le créer pour faire fonctionner le captcha!**")
+        return  msg.channel.send("**:x: Le role `Nouveau` n'existe pas, veuillez le créer pour faire fonctionner le captcha!**")
      
       } 
 msg.member.addRole(NouveauMembre).catch(err => console.log(err));   
