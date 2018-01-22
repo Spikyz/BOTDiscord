@@ -194,7 +194,7 @@ const salon = member.guild.channels.find('name', 'passage');
 
 var captcha = String(Math.random()).charAt(4) + String(Math.random()).charAt(4) + String(Math.random()).charAt(4) + String(Math.random()).charAt(4) + String(Math.random()).charAt(4);
            
-            member.send("**Bienvenue @"+ member.user.username + "** copie/colle le code ci-join dans **#certification** pour passer le captcha du serveur\n```." + captcha + "```");
+            member.send("**Bienvenue @"+ member.user.username + "** copie/colle le code ci-join dans **#certification** pour passer le captcha du serveur\n```//" + captcha + "```");
         
             member.user.id;
          
