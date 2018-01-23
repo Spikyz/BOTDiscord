@@ -15,7 +15,7 @@ var randnum = 0;
 var storynumber = db.get('histoires').map('story_value').value();
 
 bot.on('ready', () => {
-    bot.user.setPresence({ game: { name: '[//help] NeroBOT', type: 0} });
+    bot.user.setPresence({ game: { name: '[//help] HenosiaBOT', type: 0} });
     console.log("Bot Ready !");
 });
 
