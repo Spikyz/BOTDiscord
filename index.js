@@ -19,7 +19,7 @@ bot.on('ready', () => {
     console.log("Bot Ready !");
 });
 
-bot.login(process.env.TOKEN);
+bot.login('NDA1NDIxMTY0NDc5OTA1ODAz.DUonJQ.mKc9kN1q-Fpc6B_b9a3rgXXvGMg');
 
 bot.on('message', message => {
 
@@ -30,6 +30,10 @@ bot.on('message', message => {
     if (message.content === "ping"){
         message.reply("pong");
         console.log("ping pong !");
+    }
+
+    if (message.content === "Bonjour"){
+        message.reply("Bonjour");
     }
 
     if (!message.content.startsWith(prefix)) return;
