@@ -84,21 +84,12 @@ bot.on('message', message => {
 
     }
     
-    if (message.content === prefix + "promote"){
-        var promote_embed = new Discord.RichEmbed()
-            .setColor('#84815B')
-            .setTitle("Promote !")
-            .addField("args.join(" ") est désormais promu !")
-        message.channel.sendEmbed(promote_embed);
-        console.log("Commande //promote demandée !");
-    }
-    
-    if (message.content === prefix + "demote"){
-        var demote_embed = new Discord.RichEmbed()
+    if (message.content === prefix + "say"){
+        var say_embed = new Discord.RichEmbed()
             .setColor('#f1c40f')
-            .addField("Bot Ready !", "Le bot est Opérationnel")
-        message.channel.sendEmbed(test_embed);
-        console.log("Commande //demote demandée !");
+            .addField("args.join(" ")")
+        message.channel.sendEmbed(say_embed);
+        console.log("Commande //say demandée !"); 
     }
     if (message.content === prefix + "inviteme"){
         message.channel.send("Voici notre Discord ! \n - **https://discord.me/henosia**");
