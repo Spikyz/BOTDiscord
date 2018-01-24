@@ -19,7 +19,7 @@ bot.on('ready', () => {
     console.log("Bot Ready !");
 });
 
-bot.login(process.env.TOKEN);
+bot.login('NDA1NDIxMTY0NDc5OTA1ODAz.DUonJQ.mKc9kN1q-Fpc6B_b9a3rgXXvGMg');
 
 bot.on('message', message => {
 
@@ -81,9 +81,15 @@ bot.on('message', message => {
     }
 
     if (message.content === prefix + "inviteme"){
-        message.channel.send("Voici notre Discord ! \n - ```https://discord.me/henosia```");
+        message.channel.send("Voici notre Discord ! \n - **https://discord.me/henosia**");
         console.log("Commande //inviteme demandée !");
     }
+
+    if (message.content === prefix + "invite"){
+      message.channel.send("Voici mon lien d'invitation ! \n - **https://discordapp.com/oauth2/authorize?client_id=405406014041751553&scope=bot&permissions=2146958591**");
+      console.log("Commande //inviteme demandée !");
+    }
+
     });
     
 function story_random(min, max) {
