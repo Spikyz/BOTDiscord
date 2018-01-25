@@ -53,7 +53,7 @@ bot.on('message', message => {
         break;
 
         case "tellstory":
-
+            
         story_random();
         console.log(randnum);
 
