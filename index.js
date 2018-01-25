@@ -19,7 +19,7 @@ bot.on('ready', () => {
     console.log("Bot Ready !");
 });
 
-bot.login('NDA1NDIxMTY0NDc5OTA1ODAz.DUonJQ.mKc9kN1q-Fpc6B_b9a3rgXXvGMg');
+bot.login('process.env.TOKEN);
 
 bot.on('message', message => {
 
@@ -72,9 +72,15 @@ bot.on('message', message => {
             .addField("Commandes du bot !", "-  //help : affiche les commandes du bot ! \n -  //inviteme : rejoindre le discord du bot")
         message.channel.sendEmbed(help_embed);
         console.log("Commande //help demandée !");
-    
     }
 
+    if (message.content === prefix + "afaire"){
+        var afaire_embed = new Discord.RichEmbed()
+            .setColor('#f1c40f')
+            .addField("Commandes a faire disponible ici !", "***https://hastebin.com/erupesiber.pl***")
+            message.channel.sendEmbed(afaire_embed);
+        console.log("Commande //afaire demandée !");
+    }
     if (message.content === prefix + "test"){
         var test_embed = new Discord.RichEmbed()
             .setColor('#f1c40f')
@@ -83,14 +89,7 @@ bot.on('message', message => {
         console.log("Commande //test demandée !");
 
     }
-    
-    if (message.content === prefix + "say"){
-        var say_embed = new Discord.RichEmbed()
-            .setColor('#f1c40f')
-            .addField("args.join(" ")")
-        message.channel.sendEmbed(say_embed);
-        console.log("Commande //say demandée !"); 
-    }
+
     if (message.content === prefix + "inviteme"){
         message.channel.send("Voici notre Discord ! \n - **https://discord.me/henosia**");
         console.log("Commande //inviteme demandée !");
@@ -100,6 +99,7 @@ bot.on('message', message => {
       message.channel.send("Voici mon lien d'invitation ! \n - **https://discordapp.com/oauth2/authorize?client_id=405406014041751553&scope=bot&permissions=2146958591**");
       console.log("Commande //inviteme demandée !");
     }
+
 
     });
     
