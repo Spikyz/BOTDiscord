@@ -19,7 +19,7 @@ bot.on('ready', () => {
     console.log("Bot Ready !");
 });
 
-bot.login('process.env.TOKEN);
+bot.login(process.env.TOKEN);
 
 bot.on('message', message => {
 
@@ -53,7 +53,7 @@ bot.on('message', message => {
         break;
 
         case "tellstory":
-            
+
         story_random();
         console.log(randnum);
 
