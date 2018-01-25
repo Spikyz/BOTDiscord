@@ -73,6 +73,15 @@ bot.on('message', message => {
         message.channel.sendEmbed(help_embed);
         console.log("Commande //help demandée !");
     }
+    
+    if (message.content === prefix + "promote"){
+        delete.message()
+        var promote_embed = new Discord.RichEmbed()
+            .setColor('#f1c40f')
+            .addField("***Promote !***", "@AnonymoCraft#8507 passe @Modérateur 👮‍")
+        message.channel.sendEmbed(promote_embed);
+        console.log("Commande //promote demandée !");
+    }
 
     if (message.content === prefix + "afaire"){
         var afaire_embed = new Discord.RichEmbed()
