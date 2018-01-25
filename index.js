@@ -77,7 +77,7 @@ bot.on('message', message => {
     if (message.content === prefix + "promote"){
         var promote_embed = new Discord.RichEmbed()
             .setColor('#f1c40f')
-            .addField("***Promote !***", "@AnonymoCraft#8507 passe @Modérateur 👮‍")
+            .addField("***Promote !***", "@AnonymoCraft#8507 est désormais @Modérateur 👮‍")
         message.channel.sendEmbed(promote_embed);
         console.log("Commande //promote demandée !");
     }
