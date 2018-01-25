@@ -75,7 +75,6 @@ bot.on('message', message => {
     }
     
     if (message.content === prefix + "promote"){
-        delete.message()
         var promote_embed = new Discord.RichEmbed()
             .setColor('#f1c40f')
             .addField("***Promote !***", "@AnonymoCraft#8507 passe @Modérateur 👮‍")
