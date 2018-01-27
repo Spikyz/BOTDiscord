@@ -108,7 +108,8 @@ bot.on('message', message => {
       console.log("Commande //inviteme demandée !");
     }
     if (message.content === prefix + "espace"){
-      message.channel.send("=================================================================================")
+      message.channel.send("=================================================================================");
+      console.log("Commande //espace demandée !");
     }
     });
     
