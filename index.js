@@ -107,7 +107,8 @@ bot.on('message', message => {
       message.channel.send("Voici mon lien d'invitation ! \n - **https://discordapp.com/oauth2/authorize?client_id=405406014041751553&scope=bot&permissions=2146958591**");
       console.log("Commande //inviteme demandée !");
     }
-
+    if (message.content === prefix + "espace"){
+      message.delete('=================================================================================')
 
     });
     
