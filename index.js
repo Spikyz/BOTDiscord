@@ -109,7 +109,7 @@ bot.on('message', message => {
     }
     if (message.content === prefix + "espace"){
       message.channel.send("=================================================================================")
-
+    }
     });
     
 function story_random(min, max) {
