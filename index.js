@@ -29,7 +29,7 @@ bot.on('message', message => {
      if (message.content === prefix + "info"){
         var info_embed = new Discord.RichEmbed()
             .setColor('#f1c40f')
-            .addField("***Information:***", "**Nom** \n HenosiaBOT \n \n **Prefix de base** \n // \n \n **Auteur** \n @Spikyz™#4563 \n \n **Statue** \n En développement ( 5% ) \n \n **Library** \n Discord.js \n \n **Version** \n 0.0.1")
+            .addField("***Information:***", "\n **Nom** \n HenosiaBOT \n \n **Prefix de base** \n // \n \n **Auteur** \n @Spikyz™#4563 \n \n **Statue** \n En développement ( 5% ) \n \n **Library** \n Discord.js \n \n **Version** \n 0.0.1")
         message.channel.sendEmbed(info_embed);
         console.log("Commande //info demandée !");
    }
