@@ -51,7 +51,7 @@ bot.on('message', message => {
         var afaire_embed = new Discord.RichEmbed()
             .setColor('#f1c40f')
             .setTitle("Bienvenue sur mon serveur !")
-            .addField("Pour pouvoir avoir acces à mon serveur discord, vous devez rentré ici le code que le bot @Sarah#4101 vous as envoyé en message privé.", "Si vous entré le mauvais code, vous serez expulsé de mon serveur !")
+            .setDescription("Pour pouvoir avoir acces à mon serveur discord, vous devez rentré ici le code que le bot @Sarah#4101 vous as envoyé en message privé.", "Si vous entré le mauvais code, vous serez expulsé de mon serveur !")
             message.channel.sendEmbed(afaire_embed);
         console.log("Commande //afaire demandée !");
     }
