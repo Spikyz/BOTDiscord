@@ -77,4 +77,12 @@ bot.on('message', message => {
       message.channel.send("=================================================================================");
       console.log("Commande //espace demandée !");
     }
+    if (message.content.startsWith(prefix + "setgame")) {
+        if (message.author.id != '205752580251451392') {return message.reply("Tu n'est pas **mon créateur**")
+        } else {
+            var game = message.content.substr(10);
+            message.delete(message.author)
+            client.user.setPresence({game: {name : game, type :0}});
+        }}
+    }
     });
