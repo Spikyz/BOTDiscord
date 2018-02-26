@@ -77,12 +77,4 @@ bot.on('message', message => {
       message.channel.send("=================================================================================");
       console.log("Commande //espace demandée !");
     }
-    if (message.content.startsWith(prefix + "setgame")) {
-      if (message.author.id != 'tonid') {return message.reply("Tu n'est pas **l'Owner**")
-      } else {
-         var game = message.content.substr(10);
-         message.delete(message.author)
-         client.user.setPresence({game: {name : game, type :0}});
-        }}
-    }
     });
