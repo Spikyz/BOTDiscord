@@ -1,19 +1,15 @@
 {
-  "name": "nerobot",
+  "name": "theo-bot",
   "version": "1.0.0",
-  "description": "Bot crée par Spikyz",
-  "main": "main.js",
+  "description": "",
+  "main": "index.js",
   "dependencies": {
-    "discord.js": "^11.2.1",
-    "lowdb": "^1.0.0"
+    "discord.js": "^11.3.0"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [
-    "calouky13"
-  ],
   "author": "Spikyz",
   "license": "ISC"
 }
