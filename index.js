@@ -75,7 +75,7 @@ bot.on('message', message => {
     message.channel.send(botembed);
   }
 
-
+//Page d'aide
   if(cmd === `${prefix}aide`){
 
     let bicon = bot.user.displayAvatarURL;
@@ -83,7 +83,7 @@ bot.on('message', message => {
     .setDescription("_Pages d'aides_")
     .setColor("#15f153")
     .setThumbnail(bicon)
-    .addField("Pages d'aides", "`hcreateur`: affiche les commandes du Créateur", "`hadmin`: affiche les commandes d'Administration", "`hmod`: affiche les commandes de Modération", "`hassist`: affiche les commandes d'Assistance !")
+    .addField("Pages d'aides", "``hcreateur``: affiche les commandes du Créateur \n ``hadmin``: affiche les commandes d'Administration \n ``hmod``: affiche les commandes de Modération \n ``hassist``: affiche les commandes d'Assistance !")
 
-    message.reply(helpembed);
-  }})
+    message.channel.send(helpembed);
+}})
