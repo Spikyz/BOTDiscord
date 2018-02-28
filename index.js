@@ -78,6 +78,7 @@ bot.on('message', message => {
 
   if(cmd === `${prefix}aide`){
 
+    let bicon = bot.user.displayAvatarURL;
     let helpembed = new Discord.RichEmbed()
     .setDescription("_Pages d'aides_")
     .setColor("#15f153")
