@@ -39,7 +39,7 @@ bot.on('message', message => {
 
     message.delete().catch(O_o=>{});
     reportschannel.send(reportEmbed);
-
+  }
 
 
   if(cmd === `${prefix}serveur`){
@@ -54,8 +54,9 @@ bot.on('message', message => {
     .addField("Rejoins le", message.member.joinedAt)
     .addField("Membres total", message.guild.memberCount);
 
-    return message.channel.send(serveurembed);
+    message.channel.send(serveurembed);
   }
+
 
 
 
@@ -71,15 +72,17 @@ bot.on('message', message => {
     .addField("Créateur", "• Spikyz™#4563")
     .addField("Crée le", bot.user.createdAt);
 
-    return message.channel.send(botembed);
+    message.channel.send(botembed);
+  }
 
-  if(cmd === `${prefix}aide`)
 
-    var helpembed = new Discord.RichEmbed()
+  if(cmd === `${prefix}aide`){
+
+    let helpembed = new Discord.RichEmbed()
     .setDescription("_Pages d'aides_")
     .setColor("#15f153")
     .setThumbnail(bicon)
     .addField("Pages d'aides", "`hcreateur`: affiche les commandes du Créateur", "`hadmin`: affiche les commandes d'Administration", "`hmod`: affiche les commandes de Modération", "`hassist`: affiche les commandes d'Assistance !")
 
-    return message.reply(helpembed);
-  }}})
+    message.reply(helpembed);
+  }})
