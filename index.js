@@ -19,7 +19,7 @@ bot.on('message', message => {
   let args = messageArray.slice(1);
 
   if(cmd === `<@418338601382969345>`){
-    message.reply("Mon préfix est ``th!``. ***th!aide*** pour voir mes commandes")
+    message.reply("Mon préfix est ``th!``. **th!aide** pour voir mes commandes")
   }
   
   if(cmd === `${prefix}report`){
