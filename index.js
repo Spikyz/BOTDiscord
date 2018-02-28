@@ -73,10 +73,13 @@ bot.on('message', message => {
 
     return message.channel.send(botembed);
 
+  if(cmd === `${prefix}aide`)
 
-bot.on('message', message => {
-    if (message.content === 'ping') {
-      message.reply('pong !')
-    }
-  })
-}}})
+    var helpembed = new Discord.RichEmbed()
+    .setDescription("_Pages d'aides_")
+    .setColor("#15f153")
+    .setThumbnail(bicon)
+    .addField("Pages d'aides", "`hcreateur`: affiche les commandes du Créateur", "`hadmin`: affiche les commandes d'Administration", "`hmod`: affiche les commandes de Modération", "`hassist`: affiche les commandes d'Assistance !")
+
+    return message.reply(helpembed);
+  }}})
