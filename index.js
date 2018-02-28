@@ -32,7 +32,7 @@ bot.on('message', message => {
     .addField("Signalé par", `${message.author} avec l'ID: ${message.author.id}`)
     .addField("Salon", message.channel)
     .addField("Date", message.createdAt)
-    .addField("Raaison", reason);
+    .addField("Raison", reason);
 
     let reportschannel = message.guild.channels.find(`name`, "reports-logs");
     if(!reportschannel) retur, message.channel.send("Je ne trouve pas le canal **#reports-logs**.")
@@ -79,43 +79,4 @@ bot.on('message', message => {
       message.reply('pong !')
     }
   })
-//Créateur
-
-bot.on('message', message => {
-  if (message.content === `${prefix}hcreateur`) {
-    if (message.author.id != '205752580251451392') {return message.reply("Tu n'est pas **mon créateur** !")
-      message.reply("Non configurer !")
-
-
-
-  bot.on('message', message => {
-      if (message.content.startsWith(`${prefix}setgame`)) {
-        if (message.author.id != '205752580251451392') {return message.reply("Tu n'est pas **mon créateur** !")
-        } else {
-          var game = message.content.substr(10);
-          message.delete(message.author)
-          bot.user.setPresence({game: {name : game, type :0}});
-          message.reply("Je joue désormais à " + game)
-    }}
-})
-bot.on('message', message => {
-  if (message.content.startsWith(`${prefix}setusername`)) {
-    if (message.author.id != '205752580251451392') {return message.reply("Tu n'est pas **mon créateur** !")
-    } else {
-      var username = message.content.substr(14);
-      message.delete(message.author)
-      bot.user.setUsername(username)
-      message.reply("Mon nom est désormais " + username)
-    }}})
-
-    bot.on('message', message => {
-      if (message.content.startsWith(`${prefix}setavatar`)) {
-        if (message.author.id != '205752580251451392') {return message.reply("Tu n'est pas **mon créateur** !")
-        } else {
-          var avatar = message.content.substr();
-          message.delete(message.author)
-          bot.user.setAvatar(avatar)
-          message.reply("Avatar changé avec succes !")}}})}}})
-
-//Admin role
-        }}})
+}}})
