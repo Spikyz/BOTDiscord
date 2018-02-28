@@ -18,7 +18,10 @@ bot.on('message', message => {
   let cmd = messageArray[0];
   let args = messageArray.slice(1);
 
-
+  if(cmd === `<@418338601382969345>`){
+    message.reply("Mon préfix est ``th!``. th!aide pour voir mes commandes")
+  }
+  
   if(cmd === `${prefix}report`){
 
     let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
