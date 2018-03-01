@@ -49,7 +49,7 @@ bot.on('message', message => {
   }
 
   if(cmd === `${prefix}kick`){
-  
+
     let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(!kUser) return message.channel.send("Je ne trouve pas l'utilisateur.");
     let kReason = args.join(" ").slice(22);
@@ -98,6 +98,8 @@ bot.on('message', message => {
 
   if(cmd === `${prefix}serveur`){
 
+    message.delete()
+
     let sicon = message.guild.iconURL;
     let serveurembed = new Discord.RichEmbed()
     .setDescription("_Information du serveur_")
@@ -107,6 +109,7 @@ bot.on('message', message => {
     .addField("Crée le", message.guild.createdAt)
     .addField("Rejoins le", message.member.joinedAt)
     .addField("Membres total", message.guild.memberCount);
+    .setFooter(`Demandé par @${message.author.username}`, message.author.displayAvatarURL)
 
     message.channel.send(serveurembed);
   }
@@ -117,6 +120,8 @@ bot.on('message', message => {
 
   if(cmd === `${prefix}info`){
 
+    message.delete()
+
     let bicon = bot.user.displayAvatarURL;
     let botembed = new Discord.RichEmbed()
     .setDescription("_Information du bot_")
@@ -125,6 +130,7 @@ bot.on('message', message => {
     .addField("Nom du bot", bot.user.username)
     .addField("Créateur", "<@205752580251451392>")
     .addField("Crée le", bot.user.createdAt);
+    .setFooter(`Demandé par @${message.author.username}`, message.author.displayAvatarURL)
 
     message.channel.send(botembed);
   }
@@ -132,6 +138,9 @@ bot.on('message', message => {
 //Page d'aide
   if(cmd === `${prefix}aide`){
 
+    message.delete()
+
+    let aUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     let bicon = bot.user.displayAvatarURL;
     let helpembed = new Discord.RichEmbed()
     .setDescription("_Pages d'aides_")
@@ -140,6 +149,7 @@ bot.on('message', message => {
     .addField("Liste des commandes disponible", "Théo est un bot Frnçais crée par <@205752580251451392> dans le but de faciliter la gestion de votre serveur.")
     .addField("Pages d'aides", "``hcreateur``,``hadmin``,``hmod``,``hassist``.")
     .addField(":gear: Utiles", "``info``,``serveur``,``report``")
+    .setFooter(`Demandé par @${message.author.username}`, message.author.displayAvatarURL)
 
     message.channel.send(helpembed);
 }})
