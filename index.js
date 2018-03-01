@@ -156,7 +156,7 @@ bot.on('message', message => {
     .setThumbnail(bicon)
     .addField("Vous souhaites rejoindre le serveur support ?")
     .addField("https://discord.gg/6mB7MZx")
-
+  }  
 //Page d'aide
   if(cmd === `${prefix}aide`){
 
