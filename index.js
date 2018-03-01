@@ -5,7 +5,7 @@ const tokenfile = require("./token.json");
 
 bot.on('ready', function () {
   console.log("Je suis connecté !")
-  bot.user.setActivity("Test", {type: "WATCHING"});
+  bot.user.setActivity("th!aide", {type: "WATCHING"});
 })
 
 bot.login(tokenfile.token);
