@@ -123,7 +123,7 @@ bot.on('message', message => {
     .setColor("#15f153")
     .setThumbnail(bicon)
     .addField("Nom du bot", bot.user.username)
-    .addField("Créateur", "• Spikyz™#4563")
+    .addField("Créateur", "<@205752580251451392>")
     .addField("Crée le", bot.user.createdAt);
 
     message.channel.send(botembed);
@@ -137,6 +137,7 @@ bot.on('message', message => {
     .setDescription("_Pages d'aides_")
     .setColor("#15f153")
     .setThumbnail(bicon)
+    .addField("Liste des commandes disponible", "Théo est un bot Frnçais crée par <@205752580251451392> dans le but de faciliter la gestion de votre serveur.")
     .addField("Pages d'aides", "``hcreateur``,``hadmin``,``hmod``,``hassist``.")
     .addField(":gear: Utiles", "``info``,``serveur``,``report``")
 
