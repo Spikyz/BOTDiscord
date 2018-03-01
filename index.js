@@ -5,7 +5,7 @@ const tokenfile = require("./token.json");
 
 bot.on('ready', function () {
   console.log('Je suis connecté !')
-  bot.user.setActivity("Théo - theobot.cf", {type: "WATCHING"});
+  bot.user.setActivity("Théo - th!aide", {type: "WATCHING"});
 })
 
 bot.login(tokenfile.token);
@@ -146,7 +146,7 @@ bot.on('message', message => {
     .setDescription("_Pages d'aides_")
     .setColor("#15f153")
     .setThumbnail(bicon)
-    .addField("Liste des commandes disponible", "Théo est un bot Frnçais crée par <@205752580251451392> dans le but de faciliter la gestion de votre serveur.")
+    .addField("Liste des commandes disponible", "Théo est un bot Français crée par <@205752580251451392> dans le but de faciliter la gestion de votre serveur.")
     .addField("Pages d'aides", "``hcreateur``,``hadmin``,``hmod``,``hassist``.")
     .addField(":gear: Utiles", "``info``,``serveur``,``report``")
     .setFooter(`Demandé par @${message.author.username}`, message.author.displayAvatarURL)
