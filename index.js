@@ -4,8 +4,8 @@ const botconfig = require("./botconfig.json");
 const tokenfile = require("./token.json");
 
 bot.on('ready', function () {
-  console.log('Je suis connecté !')
-  bot.user.setActivity("Théo - th!aide", {type: "WATCHING"});
+  console.log("Je suis connecté !")
+  bot.user.setActivity(bot.users.size, {type: "WATCHING"});
 })
 
 bot.login(tokenfile.token);
@@ -22,7 +22,6 @@ bot.on('message', message => {
   if(cmd === `<@418338601382969345>`){
     message.reply("Mon préfix est ``th!``. **th!aide** pour voir mes commandes")
   }
-
   if(cmd === `${prefix}ban`){
 
     let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
@@ -94,6 +93,18 @@ bot.on('message', message => {
     message.delete().catch(O_o=>{});
     reportschannel.send(reportEmbed);
   }
+  if(cmd === `${prefix}suggest`){
+    let suggest = args.join(" ").slice(22);
+    let suggestEmbed = new Discord.RichEmbed()
+    .setDescription("Suggestion")
+    .addField("Suggestion de", `${message.author} avec l'ID: ${message.author.id}`)
+    .addField("Serveur", message.guild.name)
+    .addField("Date", message.createdAt)
+    .addField("Suggestion", suggest)
+
+    let suggestChannel = message.guild.find(`name`, "418325777864589312");
+    suggestChannel.send(suggestEmbed)
+  }
 
 
   if(cmd === `${prefix}serveur`){
@@ -134,22 +145,35 @@ bot.on('message', message => {
 
     message.channel.send(botembed);
   }
+  if(cmd === `${prefix}guild`){
+
+    message.delete()
+
+    let bicon = bot.user.displayAvatarURL;
+    let guildEmbed = new Discord.RichEmbed()
+    .setDescription("_Serveur Support_")
+    .setColor("#15f153")
+    .setThumbnail(bicon)
+    .addField("Vous souhaites rejoindre le serveur support ?")
+    .addField("https://discord.gg/6mB7MZx")
 
 //Page d'aide
   if(cmd === `${prefix}aide`){
 
-    message.delete()
+    message.delete(message.author)
 
-    let aUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     let bicon = bot.user.displayAvatarURL;
     let helpembed = new Discord.RichEmbed()
     .setDescription("_Pages d'aides_")
     .setColor("#15f153")
     .setThumbnail(bicon)
     .addField("Liste des commandes disponible", "Théo est un bot Français crée par <@205752580251451392> dans le but de faciliter la gestion de votre serveur.")
+    .addBlankField()
     .addField("Pages d'aides", "``hcreateur``,``hadmin``,``hmod``,``hassist``.")
     .addField(":gear: Utiles", "``info``,``serveur``,``report``")
     .setFooter(`Demandé par @${message.author.username}`, message.author.displayAvatarURL)
 
     message.channel.send(helpembed);
-}})
+  }}})
+
+
