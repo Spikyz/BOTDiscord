@@ -105,8 +105,6 @@ bot.on('message', message => {
     let suggestChannel = message.guild.find(`name`, "418325777864589312");
     suggestChannel.send(suggestEmbed)
   }
-
-
   if(cmd === `${prefix}serveur`){
 
     message.delete()
@@ -124,11 +122,6 @@ bot.on('message', message => {
 
     message.channel.send(serveurembed);
   }
-
-
-
-
-
   if(cmd === `${prefix}info`){
 
     message.delete()
@@ -156,7 +149,8 @@ bot.on('message', message => {
     .setThumbnail(bicon)
     .addField("Vous souhaites rejoindre le serveur support ?")
     .addField("https://discord.gg/6mB7MZx")
-  }  
+
+  }
 //Page d'aide
   if(cmd === `${prefix}aide`){
 
@@ -174,6 +168,5 @@ bot.on('message', message => {
     .setFooter(`Demandé par @${message.author.username}`, message.author.displayAvatarURL)
 
     message.channel.send(helpembed);
-  }}})
-
-
+  }
+})
