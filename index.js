@@ -143,15 +143,14 @@ bot.on('message', message => {
     message.delete(message.author)
 
     let bicon = bot.user.displayAvatarURL;
-    let guildEmbed = new Discord.RichEmbed()
+    let supportEmbed = new Discord.RichEmbed()
     .setDescription("_Serveur Support_")
     .setColor("#15f153")
     .setThumbnail(bicon)
-    .addField("Vous souhaites rejoindre le serveur support ?")
-    .addField("https://discord.gg/6mB7MZx")
+    .addField("Vous souhaites rejoindre le serveur support ?", "https://discord.gg/6mB7MZx")
     .setFooter(`Demandé par @${message.author.username}`, message.author.displayAvatarURL)
 
-    message.channel.send(guildEmbed)
+    message.channel.send(supportEmbed)
   }
 //Page d'aide
   if(cmd === `${prefix}aide`){
