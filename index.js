@@ -5,7 +5,7 @@ const tokenfile = require("./token.json");
 
 bot.on('ready', function () {
   console.log("Je suis connecté !")
-  bot.user.setActivity(bot.users.size, {type: "WATCHING"});
+  bot.user.setActivity("Test", {type: "WATCHING"});
 })
 
 bot.login(tokenfile.token);
@@ -107,7 +107,7 @@ bot.on('message', message => {
   }
   if(cmd === `${prefix}serveur`){
 
-    message.delete()
+    message.delete(message.author)
 
     let sicon = message.guild.iconURL;
     let serveurembed = new Discord.RichEmbed()
@@ -124,7 +124,7 @@ bot.on('message', message => {
   }
   if(cmd === `${prefix}info`){
 
-    message.delete()
+    message.delete(message.author)
 
     let bicon = bot.user.displayAvatarURL;
     let botembed = new Discord.RichEmbed()
@@ -138,9 +138,9 @@ bot.on('message', message => {
 
     message.channel.send(botembed);
   }
-  if(cmd === `${prefix}guild`){
+  if(cmd === `${prefix}support`){
 
-    message.delete()
+    message.delete(message.author)
 
     let bicon = bot.user.displayAvatarURL;
     let guildEmbed = new Discord.RichEmbed()
@@ -149,7 +149,9 @@ bot.on('message', message => {
     .setThumbnail(bicon)
     .addField("Vous souhaites rejoindre le serveur support ?")
     .addField("https://discord.gg/6mB7MZx")
+    .setFooter(`Demandé par @${message.author.username}`, message.author.displayAvatarURL)
 
+    message.channel.send(guildEmbed)
   }
 //Page d'aide
   if(cmd === `${prefix}aide`){
@@ -179,38 +181,46 @@ bot.on('message', message => {
     .setColor("#15f153")
     .setThumbnail(bicon)
     .addField("Liste des commandes du Créateur disponible", "Non défini")
+
+    message.channel.send(hcreateur);
   }
   if(cmd === `${prefix}hadmin`){
 
     message.delete(message.author)
 
     let bicon = bot.user.displayAvatarURL;
-    let hcreateur = new Discord.RichEmbed()
+    let hadmin = new Discord.RichEmbed()
     .setDescription("_Pages d'aides Admin")
     .setColor("#15f153")
     .setThumbnail(bicon)
     .addField("Liste des commandes d'Admin disponible", "Non défini")
+
+    message.channel.send(hadmin);
   }
   if(cmd === `${prefix}hmod`){
 
     message.delete(message.author)
 
     let bicon = bot.user.displayAvatarURL;
-    let hcreateur = new Discord.RichEmbed()
+    let hmod = new Discord.RichEmbed()
     .setDescription("_Pages d'aides Modérateur_")
     .setColor("#15f153")
     .setThumbnail(bicon)
     .addField("Liste des commandes Modérateur disponible", "`ban`,`kick`")
+
+    message.channel.send(hmod);
   }
   if(cmd === `${prefix}hassist`){
 
     message.delete(message.author)
 
     let bicon = bot.user.displayAvatarURL;
-    let hcreateur = new Discord.RichEmbed()
+    let hassist = new Discord.RichEmbed()
     .setDescription("_Pages d'aides Assistant_")
     .setColor("#15f153")
     .setThumbnail(bicon)
     .addField("Liste des commandes d'Assistant disponible", "Non défini")
+
+    message.channel.send(hassist);
   }
 })
