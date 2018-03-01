@@ -108,7 +108,7 @@ bot.on('message', message => {
     .addField("Nom du serveur", message.guild.name)
     .addField("Crée le", message.guild.createdAt)
     .addField("Rejoins le", message.member.joinedAt)
-    .addField("Membres total", message.guild.memberCount);
+    .addField("Membres total", message.guild.memberCount)
     .setFooter(`Demandé par @${message.author.username}`, message.author.displayAvatarURL)
 
     message.channel.send(serveurembed);
@@ -129,7 +129,7 @@ bot.on('message', message => {
     .setThumbnail(bicon)
     .addField("Nom du bot", bot.user.username)
     .addField("Créateur", "<@205752580251451392>")
-    .addField("Crée le", bot.user.createdAt);
+    .addField("Crée le", bot.user.createdAt)
     .setFooter(`Demandé par @${message.author.username}`, message.author.displayAvatarURL)
 
     message.channel.send(botembed);
