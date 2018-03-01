@@ -169,4 +169,48 @@ bot.on('message', message => {
 
     message.channel.send(helpembed);
   }
+  if(cmd === `${prefix}hcreateur`){
+
+    message.delete(message.author)
+
+    let bicon = bot.user.displayAvatarURL;
+    let hcreateur = new Discord.RichEmbed()
+    .setDescription("_Pages d'aides Créateur_")
+    .setColor("#15f153")
+    .setThumbnail(bicon)
+    .addField("Liste des commandes du Créateur disponible", "Non défini")
+  }
+  if(cmd === `${prefix}hadmin`){
+
+    message.delete(message.author)
+
+    let bicon = bot.user.displayAvatarURL;
+    let hcreateur = new Discord.RichEmbed()
+    .setDescription("_Pages d'aides Admin")
+    .setColor("#15f153")
+    .setThumbnail(bicon)
+    .addField("Liste des commandes d'Admin disponible", "Non défini")
+  }
+  if(cmd === `${prefix}hmod`){
+
+    message.delete(message.author)
+
+    let bicon = bot.user.displayAvatarURL;
+    let hcreateur = new Discord.RichEmbed()
+    .setDescription("_Pages d'aides Modérateur_")
+    .setColor("#15f153")
+    .setThumbnail(bicon)
+    .addField("Liste des commandes Modérateur disponible", "`ban`,`kick`")
+  }
+  if(cmd === `${prefix}hassist`){
+
+    message.delete(message.author)
+
+    let bicon = bot.user.displayAvatarURL;
+    let hcreateur = new Discord.RichEmbed()
+    .setDescription("_Pages d'aides Assistant_")
+    .setColor("#15f153")
+    .setThumbnail(bicon)
+    .addField("Liste des commandes d'Assistant disponible", "Non défini")
+  }
 })
