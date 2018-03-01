@@ -137,7 +137,8 @@ bot.on('message', message => {
     .setDescription("_Pages d'aides_")
     .setColor("#15f153")
     .setThumbnail(bicon)
-    .addField("Pages d'aides", "``hcreateur``: affiche les commandes du Créateur \n ``hadmin``: affiche les commandes d'Administration \n ``hmod``: affiche les commandes de Modération \n ``hassist``: affiche les commandes d'Assistance !")
+    .addField("Pages d'aides", "``hcreateur``,``hadmin``,``hmod``,``hassist``.")
+    .addField(":gear: Utiles", "``info``,``serveur``,``report``")
 
     message.channel.send(helpembed);
 }})
