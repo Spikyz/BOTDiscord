@@ -183,6 +183,7 @@ bot.on('message', message => {
       .addField("Liste des commandes du Créateur disponible", "Non défini")
 
       message.channel.send(hcreateur);
+    }
   }
   if(cmd === `${prefix}hadmin`){
 
@@ -222,4 +223,4 @@ bot.on('message', message => {
     .addField("Liste des commandes d'Assistant disponible", "Non défini")
 
     message.channel.send(hassist);
-}}})
+}})
