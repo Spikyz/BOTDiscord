@@ -172,17 +172,17 @@ bot.on('message', message => {
     message.channel.send(helpembed);
   }
   if(cmd === `${prefix}hcreateur`){
+    if (!message.author.id ==='205752580251451392') {return message.reply("Tu n'est pas **mon créateur**")
+      message.delete(message.author)
 
-    message.delete(message.author)
+      let bicon = bot.user.displayAvatarURL;
+      let hcreateur = new Discord.RichEmbed()
+      .setDescription("_Pages d'aides Créateur_")
+      .setColor("#15f153")
+      .setThumbnail(bicon)
+      .addField("Liste des commandes du Créateur disponible", "Non défini")
 
-    let bicon = bot.user.displayAvatarURL;
-    let hcreateur = new Discord.RichEmbed()
-    .setDescription("_Pages d'aides Créateur_")
-    .setColor("#15f153")
-    .setThumbnail(bicon)
-    .addField("Liste des commandes du Créateur disponible", "Non défini")
-
-    message.channel.send(hcreateur);
+      message.channel.send(hcreateur);
   }
   if(cmd === `${prefix}hadmin`){
 
@@ -222,4 +222,4 @@ bot.on('message', message => {
     .addField("Liste des commandes d'Assistant disponible", "Non défini")
 
     message.channel.send(hassist);
-}})
+}}})
