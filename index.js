@@ -171,8 +171,7 @@ bot.on('message', message => {
 
     message.channel.send(helpembed);
   }
-  if(cmd === `${prefix}hcreateur`){
-  if (!message.author.id ==='205752580251451392') {return message.reply("Tu n'est pas **mon créateur**")
+  if(cmd === `${prefix}hcreateur` || !message.author.id ==='205752580251451392') {return message.reply("Tu n'est pas **mon créateur**")
     message.delete(message.author)
 
     let bicon = bot.user.displayAvatarURL;
@@ -223,4 +222,4 @@ bot.on('message', message => {
     .addField("Liste des commandes d'Assistant disponible", "Non défini")
 
     message.channel.send(hassist);
-}}})
+  }})
