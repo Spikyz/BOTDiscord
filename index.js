@@ -27,8 +27,8 @@ bot.on('message', message => {
     let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(!bUser) return message.channel.send("Je ne trouve pas l'utilisateur.");
     let bReason = args.join(" ").slice(22);
-    if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.channel.send("Tu n'as pas la permissions (< MANAGE_MESSAGE )");
-    if(bUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Tu ne peux pas kick cette utilisateur !");
+    if(!message.member.hasPermission("BAN_MEMBERS" || !message.author.id === "205752580251451392")) return message.channel.send("Tu n'as pas la permissions (< BAN_MEMBERS )");
+    if(bUser.hasPermission("BAN_MEMBERS" || bUser.id === "205752580251451392")) return message.channel.send("Tu ne peux pas kick cette utilisateur !");
 
     let banEmbed = new Discord.RichEmbed()
     .setDescription("~Exclusion~")
@@ -52,8 +52,9 @@ bot.on('message', message => {
     let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(!kUser) return message.channel.send("Je ne trouve pas l'utilisateur.");
     let kReason = args.join(" ").slice(22);
-    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Tu n'as pas la permissions (< MANAGE_MESSAGE )");
-    if(kUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Tu ne peux pas kick cette utilisateur !");
+    if(!message.member.hasPermission("KICK_MEMBERS" || !message.author.id === "205752580251451392")) return message.channel.send("Tu n'as pas la permissions (< KICK_MEMBERS )");
+    if(kUser.hasPermission("KICK_MEMBERS" || kUser.id === "205752580251451392")) return message.channel.send("Tu ne peux pas kick cette utilisateur !");
+
 
     let kickEmbed = new Discord.RichEmbed()
     .setDescription("~Expulsion~")
@@ -221,5 +222,4 @@ bot.on('message', message => {
     .addField("Liste des commandes d'Assistant disponible", "Non défini")
 
     message.channel.send(hassist);
-  }
-})
+}})
