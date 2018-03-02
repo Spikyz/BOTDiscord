@@ -4,7 +4,7 @@ const botconfig = require("./botconfig.json");
 const tokenfile = require("./token.json");
 
 bot.on('ready', function () {
-  console.log("Je suis connecté !")
+  console.log(`Je suis connecté sur ${bot.guilds.size} serveurs avec ${bot.users.size} utilisateurs !`)
   bot.user.setActivity(`${bot.users.size} utilisateurs | ${bot.guilds.size} serveurs`, {type: "WATCHING"});
 })
 
