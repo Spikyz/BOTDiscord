@@ -5,7 +5,7 @@ const tokenfile = require("./token.json");
 
 bot.on('ready', function () {
   console.log("Je suis connecté !")
-  bot.user.setActivity("th!aide", {type: "WATCHING"});
+  bot.user.setActivity(`${bot.users.size} utilisateurs sur ${bot.guilds.size} serveurs`, {type: "WATCHING"});
 })
 
 bot.login(tokenfile.token);
@@ -135,6 +135,8 @@ bot.on('message', message => {
     .addField("Nom du bot", bot.user.username)
     .addField("Créateur", "<@205752580251451392>")
     .addField("Crée le", bot.user.createdAt)
+    .addField("Utilisateurs", bot.users.size)
+    .addField("Serveurs", bot.guilds.size)
     .setFooter(`Demandé par @${message.author.username}`, message.author.displayAvatarURL)
 
     message.channel.send(botembed);
@@ -169,7 +171,7 @@ bot.on('message', message => {
     .addField(":gear: Utiles", "``info``,``serveur``,``report``")
     .setFooter(`Demandé par @${message.author.username}`, message.author.displayAvatarURL)
 
-    message.channel.send(helpembed);
+    message.author.sendEmbed(helpembed);
   }
   if(cmd === `${prefix}hcreateur`){
 
