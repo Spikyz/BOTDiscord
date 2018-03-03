@@ -22,6 +22,11 @@ bot.on('message', message => {
   if(cmd === `<@418338601382969345>`){
     message.reply("Mon préfix est ``th!``. **th!aide** pour voir mes commandes")
   }
+  if(cmd === `${prefix}actualise`){
+    message.delete(message.author)
+    bot.user.setActivity(`${bot.users.size} utilisateurs | ${bot.guilds.size} serveurs`, {type: "WATCHING"});
+    message.reply("Mon activite à été Actualisé !")
+  }
   if(cmd === `${prefix}ban`){
 
     let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
