@@ -24,6 +24,8 @@ bot.on('message', message => {
   }
   if(cmd === `${prefix}actualise`){
     message.delete(message.author)
+    if (!message.author.id === '205752580251451392') {return message.reply("Tu n'est pas **mon créateur**")
+    } else {                                         
     bot.user.setActivity(`${bot.users.size} utilisateurs | ${bot.guilds.size} serveurs`, {type: "WATCHING"});
     message.reply("Mon activite à été Actualisé !")
   }
