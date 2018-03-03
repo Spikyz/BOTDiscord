@@ -176,7 +176,7 @@ bot.on('message', message => {
     .addField("Pages d'aides", "``hcreateur``,``hadmin``,``hmod``,``hassist``.")
     .addField(":gear: Utiles", "``info``,``serveur``,``report``")
     .setFooter(`Demandé par @${message.author.username}`, message.author.displayAvatarURL)
-
+    message.reply(":envelope_with_arrow: Regardez vos messages privé !")
     message.author.sendEmbed(helpembed);
   }
   if(cmd === `${prefix}hcreateur`){
