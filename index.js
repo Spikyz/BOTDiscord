@@ -23,11 +23,10 @@ bot.on('message', message => {
     message.reply("Mon préfix est ``th!``. **th!aide** pour voir mes commandes")
   }
   if(cmd === `${prefix}actualise`){
-    message.delete(message.author)
-  if (!message.author.id === '205752580251451392') {return message.reply("Tu n'est pas **mon créateur**")
-  } else {                                         
-  bot.user.setActivity(`${bot.users.size} utilisateurs | ${bot.guilds.size} serveurs`, {type: "WATCHING"});
-  message.reply("Mon activite à été Actualisé !")
+    let game = args.join(" ").slice(22);
+    message.delete(message.author)                              
+    bot.user.setActivity(`${bot.users.size} utilisateurs | ${bot.guilds.size} serveurs`, {type: game});
+    message.reply("Mon activite à été Actualisé !")
   }
   if(cmd === `${prefix}ban`){
 
