@@ -230,5 +230,5 @@ bot.on('message', message => {
     .setThumbnail(bicon)
     .addField("Liste des commandes d'Assistant disponible", "Non défini")
 
-    mmessage.author.sendEmbed(hassist);
+    message.author.sendEmbed(hassist);
   }})
