@@ -190,7 +190,7 @@ bot.on('message', message => {
     .setThumbnail(bicon)
     .addField("Liste des commandes du Créateur disponible", "Non défini")
 
-    message.channel.send(hcreateur);
+    message.author.sendEmbed(hcreateur);
     
   }
   if(cmd === `${prefix}hadmin`){
@@ -204,7 +204,7 @@ bot.on('message', message => {
     .setThumbnail(bicon)
     .addField("Liste des commandes d'Admin disponible", "Non défini")
 
-    message.channel.send(hadmin);
+    message.author.sendEmbed(hadmin);
   }
   if(cmd === `${prefix}hmod`){
 
@@ -217,7 +217,7 @@ bot.on('message', message => {
     .setThumbnail(bicon)
     .addField("Liste des commandes Modérateur disponible", "`ban`,`kick`")
 
-    message.channel.send(hmod);
+    message.author.sendEmbed(hmod);
   }
   if(cmd === `${prefix}hassist`){
 
@@ -230,5 +230,5 @@ bot.on('message', message => {
     .setThumbnail(bicon)
     .addField("Liste des commandes d'Assistant disponible", "Non défini")
 
-    message.channel.send(hassist);
+    mmessage.author.sendEmbed(hassist);
   }})
