@@ -22,6 +22,10 @@ bot.on('message', message => {
   if(cmd === `<@418338601382969345>`){
     message.reply("Mon préfix est ``th!``. **th!aide** pour voir mes commandes")
   }
+  if(cmd === `${prefix}pickuser`){
+    let random = message.channel.members.random();
+    
+    message.reply(`Utilisateur choisis: ${random}`);
   if(cmd === `${prefix}actualise`){
     let game = args.join(" ").slice(22);
     message.delete(message.author)                              
