@@ -26,6 +26,7 @@ bot.on('message', message => {
     let random = message.channel.members.random();
     
     message.reply(`Utilisateur choisis: ${random}`);
+  }
   if(cmd === `${prefix}actualise`){
     let game = args.join(" ").slice(22);
     message.delete(message.author)                              
