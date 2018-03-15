@@ -27,11 +27,21 @@ bot.on('message', message => {
     
     message.reply(`Utilisateur choisis: ${random}`);
   }
-  if(cmd === `${prefix}actualise`){
+  if(cmd === `${prefix}actuser`){
+    message.delete(message.author)                              
+    bot.user.setActivity(`${bot.users.size} utilisateurs | ${bot.guilds.size} serveurs`, {type: WATCHING});
+    message.reply("Mon activite à été Actualisé !")
+  }
+  if(cmd === `${prefix}setgametype`)
+    let gametype = args.join(" ").slice(22);
+    message.delete(message.author)
+    message.reply("Activite: gametype !")
+    
+  if(cmd === `${prefix}setgame`){
     let game = args.join(" ").slice(22);
     message.delete(message.author)                              
-    bot.user.setActivity(`${bot.users.size} utilisateurs | ${bot.guilds.size} serveurs`, {type: game});
-    message.reply("Mon activite à été Actualisé !")
+    bot.user.setActivity(`${game}`, {type: gametype});
+    message.reply("Activite: gametype !")
   }
   if(cmd === `${prefix}ban`){
 
