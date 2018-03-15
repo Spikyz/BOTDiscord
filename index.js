@@ -32,17 +32,6 @@ bot.on('message', message => {
     bot.user.setActivity(`${bot.users.size} utilisateurs | ${bot.guilds.size} serveurs`, {type: WATCHING});
     message.reply("Mon activite à été Actualisé !")
   }
-  if(cmd === `${prefix}setgametype`)
-    let gametype = args.join(" ").slice(22);
-    message.delete(message.author)
-    message.reply("Activite: gametype !")
-    
-  if(cmd === `${prefix}setgame`){
-    let game = args.join(" ").slice(22);
-    message.delete(message.author)                              
-    bot.user.setActivity(`${game}`, {type: gametype});
-    message.reply("Activite: gametype !")
-  }
   if(cmd === `${prefix}ban`){
 
     let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
