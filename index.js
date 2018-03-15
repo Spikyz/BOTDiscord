@@ -30,7 +30,7 @@ bot.on('message', message => {
   if(cmd === `${prefix}actuser`){
     message.delete(message.author)                              
     bot.user.setActivity(`${bot.users.size} utilisateurs | ${bot.guilds.size} serveurs`, {type: WATCHING});
-    message.reply("Mon activite à été Actualisé !")
+    message.reply("Mon activite à été Actualisé !");
   }
   if(cmd === `${prefix}ban`){
 
