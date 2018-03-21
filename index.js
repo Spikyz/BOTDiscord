@@ -8,7 +8,7 @@ bot.on('ready', function () {
   bot.user.setActivity(`${bot.users.size} utilisateurs | ${bot.guilds.size} serveurs`, {type: "WATCHING"});
 })
 
-bot.login(tokenfile.token);
+bot.login(process.env.TOKEN);
 
 bot.on('message', message => {
   if(message.author.bot) return;
