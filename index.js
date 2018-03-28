@@ -2,13 +2,13 @@ const Discord = require('discord.js');
 const bot = new Discord.Client();
 const botconfig = require("./botconfig.json");
 const tokenfile = require("./token.json");
+const token = process.env.TOKEN;
 
 bot.on('ready', function () {
   console.log(`Je suis connecté sur ${bot.guilds.size} serveurs avec ${bot.users.size} utilisateurs !`)
   bot.user.setActivity(`${bot.users.size} utilisateurs | ${bot.guilds.size} serveurs`, {type: "WATCHING"});
 })
-
-bot.login(process.env.TOKEN);
+bot.login(token)
 
 bot.on('message', message => {
   if(message.author.bot) return;
